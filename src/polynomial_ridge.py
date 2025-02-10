@@ -1,9 +1,11 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
-def ridge_regression(x,y,d, alpha=0.1):
+def polynomial_ridge(x,y,d, alpha=0.1):
+    """ 
+    Perform polynomial ridge regression of degree d on the data (x,y) with regularization parameter alpha.
     """
-    Perform ridge regression on the data X, y with regularization parameter alpha.
-    """
+
     n = len(x)
     X = np.ones((n,d+1))
 
@@ -25,3 +27,13 @@ def predict(x, beta):
     for i in range(d+1):
         y += beta[i] * x**i
     return y
+
+
+def plot_regression(x,y,y_final):
+
+    plt.scatter(x, y, color='blue')
+    plt.plot(x, y_final, color='red')
+    plt.title('Ridge regression')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.show()
