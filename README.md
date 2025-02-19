@@ -9,6 +9,8 @@ This repository contains an implementation of **Polynomial Regression with Ridge
 - **Jupyter Notebook Demonstrations**: Interactive examples applying the algorithm to various datasets.
 - **Dataset Handling**: Includes experiments with real-world data from Kaggle.
 
+![Model Performance](images/output.png)
+
 ## Repository Structure
 ```
 📂 ridge-regression
