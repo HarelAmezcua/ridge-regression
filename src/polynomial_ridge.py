@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 def polynomial_ridge(x,y,d, alpha=0.1):
     """ 
@@ -28,12 +29,13 @@ def predict(x, beta):
         y += beta[i] * x**i
     return y
 
-
-def plot_regression(x,y,y_final):
-
-    plt.scatter(x, y, color='blue')
-    plt.plot(x, y_final, color='red')
-    plt.title('Ridge regression')
-    plt.xlabel('x')
-    plt.ylabel('y')
+def plot_regression(x, y, y_final):
+    sns.set_theme(style="whitegrid")
+    plt.figure(figsize=(10, 6))
+    sns.scatterplot(x=x, y=y, color='blue', s=100, label='Data points')
+    sns.lineplot(x=x, y=y_final, color='red', linewidth=2.5, label='Ridge regression')
+    plt.title('Ridge Regression', fontsize=16)
+    plt.xlabel('x', fontsize=14)
+    plt.ylabel('y', fontsize=14)
+    plt.legend()
     plt.show()
